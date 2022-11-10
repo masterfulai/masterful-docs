@@ -1,0 +1,16 @@
+dataset:
+  root_path: .
+  splits: [train, test]
+  label_map: label_map.csv
+model:
+  architecture: efficientnetb0_v1
+  num_classes: 1
+  input_shape: [512,512,3]
+training:
+  task: binary_classification
+  training_split: train
+output:
+  formats: [saved_model]
+  path: ~/model_output
+evaluation:
+  split: test
